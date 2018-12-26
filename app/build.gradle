@@ -28,5 +28,3 @@ dependencies {
 
 //    implementation 'com.github.User:Repo:Version'
 }
-apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.duldun'
