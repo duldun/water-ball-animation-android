@@ -1,2 +1,4 @@
 # water-Ball
-Android native water ball animation
+water ball animation for android device.
+
+
