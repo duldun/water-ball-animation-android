@@ -10,15 +10,11 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageView water_ball,water_ball_2,water_ball_3,water_ball_4,water_ball_5,water_ball_6,water_ball_7,water_ball_8,Water_ball_9,Water_ball_10;
     ConstraintLayout view;
-    private float positionX;
-    private float positionY;
-    private int duration = 2500;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -26,138 +22,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        randamWaterBallAnimation();
+        randomWaterBallAnimation();
 
-        view = findViewById(R.id.view);
-        view.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                positionX = motionEvent.getX();
-                positionY = motionEvent.getY();
-
-//                Toast.makeText(getApplicationContext(),positionX+"  "+positionY,Toast.LENGTH_LONG).show();
-//                clickWaterBallAnimation();
-                return false;
-            }
-        });
+//        view = findViewById(R.id.view);
+//        view.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                positionX = motionEvent.getX();
+//                positionY = motionEvent.getY();
+//                return false;
+//            }
+//        });
 
     }
 
-    private void clickWaterBallAnimation() {
-        TranslateAnimation mAnimation ;
-        mAnimation = new TranslateAnimation(
-                TranslateAnimation.RELATIVE_TO_PARENT, positionX,
-                TranslateAnimation.RELATIVE_TO_PARENT,positionX+10,
-                TranslateAnimation.RELATIVE_TO_PARENT, positionY,
-                TranslateAnimation.RELATIVE_TO_PARENT, positionY+10);
-        mAnimation.setDuration(duration);
-        mAnimation.setRepeatCount(-1);
-        mAnimation.setInterpolator(new LinearInterpolator());
-        water_ball.setAnimation(mAnimation);
 
-        TranslateAnimation mAnimation2 ;
-        mAnimation2 = new TranslateAnimation(
-                TranslateAnimation.RELATIVE_TO_PARENT, positionX,
-                TranslateAnimation.RELATIVE_TO_PARENT,positionX-10,
-                TranslateAnimation.RELATIVE_TO_PARENT, positionY,
-                TranslateAnimation.RELATIVE_TO_PARENT, positionY+10);
-        mAnimation2.setDuration(duration);
-        mAnimation2.setRepeatCount(-1);
-        mAnimation2.setInterpolator(new LinearInterpolator());
-        water_ball_2.setAnimation(mAnimation2);
-
-        TranslateAnimation mAnimation3 ;
-        mAnimation3 = new TranslateAnimation(
-                TranslateAnimation.RELATIVE_TO_PARENT, positionX,
-                TranslateAnimation.RELATIVE_TO_PARENT,positionX +10,
-                TranslateAnimation.RELATIVE_TO_PARENT, positionY,
-                TranslateAnimation.RELATIVE_TO_PARENT, positionY - 10);
-        mAnimation3.setDuration(duration);mAnimation3.setRepeatCount(-1);
-        mAnimation3.setInterpolator(new LinearInterpolator());
-        water_ball_3.setAnimation(mAnimation3);
-
-        TranslateAnimation mAnimation4 ;
-        mAnimation4 = new TranslateAnimation(
-                TranslateAnimation.RELATIVE_TO_PARENT, positionX,
-                TranslateAnimation.RELATIVE_TO_PARENT,positionX + 20,
-                TranslateAnimation.RELATIVE_TO_PARENT, positionY,
-                TranslateAnimation.RELATIVE_TO_PARENT, positionY - 20);
-        mAnimation4.setDuration(duration);
-        mAnimation4.setRepeatCount(-1);
-        mAnimation4.setInterpolator(new LinearInterpolator());
-        water_ball_4.setAnimation(mAnimation4);
-
-//        TranslateAnimation mAnimation5 ;
-//        mAnimation5 = new TranslateAnimation(
-//                TranslateAnimation.RELATIVE_TO_PARENT, positionX,
-//                TranslateAnimation.RELATIVE_TO_PARENT,0f,
-//                TranslateAnimation.RELATIVE_TO_PARENT, positionY,
-//                TranslateAnimation.RELATIVE_TO_PARENT, 0f);
-//        mAnimation5.setDuration(duration);
-//        mAnimation5.setRepeatCount(-1);
-//        mAnimation5.setInterpolator(new LinearInterpolator());
-//        water_ball_5.setAnimation(mAnimation5);
-//
-//        TranslateAnimation mAnimation6 ;
-//        mAnimation6 = new TranslateAnimation(
-//                TranslateAnimation.RELATIVE_TO_PARENT, positionX,
-//                TranslateAnimation.RELATIVE_TO_PARENT,1.0f,
-//                TranslateAnimation.RELATIVE_TO_PARENT, positionY,
-//                TranslateAnimation.RELATIVE_TO_PARENT, 0.0f);
-//        mAnimation6.setDuration(duration);
-//        mAnimation6.setRepeatCount(-1);
-//        mAnimation6.setInterpolator(new LinearInterpolator());
-//        water_ball_6.setAnimation(mAnimation6);
-//
-//        TranslateAnimation mAnimation7 ;
-//        mAnimation7 = new TranslateAnimation(
-//                TranslateAnimation.RELATIVE_TO_PARENT, positionX,
-//                TranslateAnimation.RELATIVE_TO_PARENT,0.5f,
-//                TranslateAnimation.RELATIVE_TO_PARENT, positionY,
-//                TranslateAnimation.RELATIVE_TO_PARENT, 0f);
-//        mAnimation7.setDuration(duration);
-//        mAnimation7.setRepeatCount(-1);
-//        mAnimation7.setInterpolator(new LinearInterpolator());
-//        water_ball_7.setAnimation(mAnimation7);
-//
-//        TranslateAnimation mAnimation8 ;
-//        mAnimation8 = new TranslateAnimation(
-//                TranslateAnimation.RELATIVE_TO_PARENT, positionX,
-//                TranslateAnimation.RELATIVE_TO_PARENT,0.9f,
-//                TranslateAnimation.RELATIVE_TO_PARENT, positionY,
-//                TranslateAnimation.RELATIVE_TO_PARENT, 0f);
-//        mAnimation8.setDuration(duration);
-//        mAnimation8.setRepeatCount(-1);
-//        mAnimation8.setInterpolator(new LinearInterpolator());
-//        water_ball_8.setAnimation(mAnimation8);
-//
-//
-//        TranslateAnimation mAnimation10 ;
-//        mAnimation10 = new TranslateAnimation(
-//                TranslateAnimation.RELATIVE_TO_PARENT, positionX,
-//                TranslateAnimation.RELATIVE_TO_PARENT,1f,
-//                TranslateAnimation.RELATIVE_TO_PARENT, positionY,
-//                TranslateAnimation.RELATIVE_TO_PARENT, 0f);
-//        mAnimation10.setDuration(duration);
-//        mAnimation10.setRepeatCount(-1);
-//        mAnimation10.setInterpolator(new LinearInterpolator());
-//        Water_ball_10.setAnimation(mAnimation10);
-//
-//
-//        TranslateAnimation mAnimation9 ;
-//        mAnimation9 = new TranslateAnimation(
-//                TranslateAnimation.RELATIVE_TO_PARENT, positionX,
-//                TranslateAnimation.RELATIVE_TO_PARENT,0.9f,
-//                TranslateAnimation.RELATIVE_TO_PARENT, positionY,
-//                TranslateAnimation.RELATIVE_TO_PARENT, 0f);
-//        mAnimation9.setDuration(duration);
-//        mAnimation9.setRepeatCount(-1);
-//        mAnimation9.setInterpolator(new LinearInterpolator());
-//        Water_ball_9.setAnimation(mAnimation9);
-
-    }
-
-    private void randamWaterBallAnimation(){
+    private void randomWaterBallAnimation(){
         water_ball =  findViewById(R.id.water_ball);
         TranslateAnimation mAnimation ;
         mAnimation = new TranslateAnimation(
