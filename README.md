@@ -1,2 +1,5 @@
 # water-Ball
-Android native water ball animation
+water ball animation for android device.
+
+![alt text](https://github.com/duldun/water-Ball/blob/001/app/src/main/res/mipmap-xhdpi/ic_launcher.png)
+
